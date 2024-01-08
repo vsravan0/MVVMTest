@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+      <variable
+          name="authmodel"
+          type="org.edu.yamini.viewmodel.AuthModel" />
+    </data>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:layout_marginTop="@android:dimen/app_icon_size"
+        android:text="@string/login"/>
+    <EditText
+        android:text="@{authmodel.userName}"
+        android:layout_marginTop="@android:dimen/app_icon_size"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/username"/>
+    <EditText
+           android:text="@{authmodel.password}"
+        android:layout_marginTop="@android:dimen/app_icon_size"
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/pasdsword"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:onClick="@{authmodel::onLogin}"
+
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/signup"
+        android:onClick="@{authmodel::onSignup}"
+        />
+
+</LinearLayout>
+</layout>
