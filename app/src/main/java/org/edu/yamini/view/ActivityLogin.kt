@@ -2,6 +2,7 @@ package org.edu.yamini.view
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.lifecycle.ViewModelProvider
 import org.edu.yamini.databinding.LayoutLoginBinding
@@ -28,6 +29,7 @@ class ActivityLogin : ComponentActivity() , AuthListener {
 
     override fun onSuccess() {
         Log.d("Activity Login", "onSuccess")
+        Toast.makeText(applicationContext, "Success", Toast.LENGTH_SHORT).show()
     }
 
     override fun onFailure(message: String) {
