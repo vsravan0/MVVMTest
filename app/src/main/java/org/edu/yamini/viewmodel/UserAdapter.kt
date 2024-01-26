@@ -4,7 +4,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import org.edu.yamini.data.Users
+import org.edu.yamini.data.db.entities.Users
 import org.edu.yamini.databinding.LayoutUserItemBinding
 
 class UserAdapter : RecyclerView.Adapter<UserViewHolder>() {

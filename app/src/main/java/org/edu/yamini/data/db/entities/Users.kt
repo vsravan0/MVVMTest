@@ -1,6 +1,7 @@
 package org.edu.yamini.data.db.entities
 
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 
 /*
   "id": 1,
@@ -27,10 +28,14 @@ import androidx.room.Entity
  */
 @Entity
 data class Users(
-    var id: Int? = null,
+
     var name :String? = null,
     var username :String? = null,
     var email :String? = null,
     var phone :String? = null,
     var website :String? = null,
     )
+{
+    @PrimaryKey(autoGenerate = false)
+    var id: Int? = null
+}

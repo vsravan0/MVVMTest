@@ -1,7 +1,6 @@
 package org.edu.yamini.data.network
 
-import okhttp3.ResponseBody
-import org.edu.yamini.data.Users
+import org.edu.yamini.data.db.entities.Users
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

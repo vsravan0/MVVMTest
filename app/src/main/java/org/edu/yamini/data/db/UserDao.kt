@@ -12,7 +12,7 @@ import org.edu.yamini.data.db.entities.Users
 interface UserDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun upsert(user : Users) : Long
+    fun upsert(user : List<Users>) : List<Long>
 
     @Query("select * from users")
     fun getUsers() : LiveData<Users>

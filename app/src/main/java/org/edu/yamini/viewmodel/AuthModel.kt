@@ -23,8 +23,8 @@ class AuthModel : ViewModel() {
             return
         } */
 
-        val userResponse = UserRepository().UserRepos()
-        authListener?.onSuccess()
+     //   val userResponse = UserRepository().UserRepos()
+      //  authListener?.onSuccess()
         // Success
     }
 
