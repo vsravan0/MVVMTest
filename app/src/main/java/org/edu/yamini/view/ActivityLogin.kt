@@ -1,5 +1,6 @@
 package org.edu.yamini.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -22,6 +23,14 @@ class ActivityLogin : ComponentActivity() , AuthListener {
 
         
 }
+
+    fun gotoNextActivity() {
+
+        var intent : Intent
+        intent = Intent(this,ActivityUsers::class.java )
+        startActivity(intent)
+
+    }
 
     override fun onStarted() {
         Log.d("Activity Login", "onStarted")
