@@ -36,5 +36,8 @@ class UserRepository (
         return  responseUsersList
     }
 
+    suspend  fun getUserCoroutine() : Response<List<Users>> {
+        return  api.getUsersResponse();
+    }
 
 }

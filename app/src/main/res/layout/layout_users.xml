@@ -18,6 +18,12 @@
         android:onClick="@{userviewmodel::onLoadUsers}"
         android:text="Load Users" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{userviewmodel::onLoadUsersResponse}"
+        android:text="Load Users (Coroutines)" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

@@ -11,4 +11,6 @@ interface UserDataListener {
     fun onFailure(data : String)
 
     fun onSuccess(data : LiveData<List<Users>>)
+
+    fun onSuccess(data : List<Users>)
 }

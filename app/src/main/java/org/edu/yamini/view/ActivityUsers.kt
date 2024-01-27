@@ -69,4 +69,26 @@ class ActivityUsers : ComponentActivity() , UserDataListener{
         })
     }
 
+    override fun onSuccess(data: List<Users>) {
+        Log.d(TAG,"onSuccess coroutine " + data);
+        val indexes = db.getuserDao().upsert(data)
+        Log.d(TAG,"onSuccess Db Data saved  " + indexes);
+        //updateList(data)
+
+        runOnUiThread{
+                     adapter.setUsersList(data)
+                 }
+    }
+
+    private fun updateList(list : List<Users>) {
+        Log.d(TAG,"updateList  started ");
+
+        runOnUiThread{
+            Log.d(TAG,"updateList inside Ui Thread start ");
+            adapter.setUsersList(list)
+            Log.d(TAG,"updateList inside Ui Thread end ");
+        }
+        Log.d(TAG,"updateList outside Ui Thread end ");
+    }
+
 }
