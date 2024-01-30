@@ -6,7 +6,6 @@ import androidx.activity.ComponentActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.edu.yamini.data.db.AppDatabase
 import org.edu.yamini.data.db.UserDao
@@ -17,23 +16,32 @@ import org.edu.yamini.databinding.LayoutUsersBinding
 import org.edu.yamini.viewmodel.UserAdapter
 import org.edu.yamini.viewmodel.UserDataListener
 import org.edu.yamini.viewmodel.UserViewModel
+import org.kodein.di.android.kodein
+import org.kodein.di.KodeinAware
+import org.kodein.di.generic.instance
 
-class ActivityUsers : ComponentActivity() , UserDataListener{
+class ActivityUsers : ComponentActivity() , UserDataListener, KodeinAware{
+
+    override val kodein by kodein()
+
+    private val factory : UserViewModelFactory by instance()
 
     private val TAG = "ActivityUsers";
     private lateinit var mUserBinding : LayoutUsersBinding
     private lateinit var mUserViewModel : UserViewModel
     val adapter = UserAdapter()
-    lateinit var db : AppDatabase
+   // lateinit var db : AppDatabase
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
 
-        db = AppDatabase(this)
+        /*db = AppDatabase(this)
         val api = MyApi()
         val repository = UserRepository(api, db );
-        val factory  = UserViewModelFactory(repository)
+        val factory  = UserViewModelFactory(repository) */
 
 
         mUserBinding = LayoutUsersBinding.inflate(layoutInflater)
@@ -71,8 +79,8 @@ class ActivityUsers : ComponentActivity() , UserDataListener{
 
     override fun onSuccess(data: List<Users>) {
         Log.d(TAG,"onSuccess coroutine " + data);
-        val indexes = db.getuserDao().upsert(data)
-        Log.d(TAG,"onSuccess Db Data saved  " + indexes);
+       // val indexes = db.getuserDao().upsert(data)
+      //  Log.d(TAG,"onSuccess Db Data saved  " + indexes);
         //updateList(data)
 
         runOnUiThread{

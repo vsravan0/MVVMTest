@@ -87,5 +87,10 @@ dependencies {
     //corouties
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
 
+    // Kodein
+    implementation ("org.kodein.di:kodein-di-generic-jvm:6.3.2")
+    implementation ("org.kodein.di:kodein-di-framework-android-x:6.3.2")
+
+
 
 }
