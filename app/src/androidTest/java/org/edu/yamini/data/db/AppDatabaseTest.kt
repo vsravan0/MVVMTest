@@ -14,14 +14,14 @@ import org.junit.runner.RunWith
 
 
 @RunWith(AndroidJUnit4::class)
-class AppDatabaseTest : TestCase() {
+class AppDatabaseTest /*: TestCase() */ {
 
     private lateinit var db  : AppDatabase
     private lateinit var dao  : UserDao
 
 
     @Before
-    public override fun setUp() {
+    public /*override */ fun setUp() {
         val context = ApplicationProvider.getApplicationContext<Context>()
         db = Room.inMemoryDatabaseBuilder(context, AppDatabase::class.java).build()
         dao = db.getuserDao();

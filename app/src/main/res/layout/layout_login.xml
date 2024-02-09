@@ -18,12 +18,14 @@
         android:layout_marginTop="@android:dimen/app_icon_size"
         android:text="@string/login"/>
     <EditText
+        android:id="@+id/id_et_unm"
         android:text="@={authmodel.userName}"
         android:layout_marginTop="@android:dimen/app_icon_size"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/username"/>
     <EditText
+        android:id="@+id/id_et_pwd"
            android:text="@={authmodel.password}"
         android:layout_marginTop="@android:dimen/app_icon_size"
         android:inputType="textPassword"
@@ -32,6 +34,7 @@
         android:hint="@string/pasdsword"/>
 
     <Button
+        android:id="@+id/id_btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/login"
